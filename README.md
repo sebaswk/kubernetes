@@ -29,7 +29,7 @@ https://github.com/sebaswk/bash/blob/main/kubectlInstall.sh
 - kubectl -n kube-system edit configmap aws-auth
 
 ##### It should look something like this: (In this case, the cluster is in AWS EKS)
-  mapUsers: |
+- mapUsers: |
     - userarn: arn:aws:iam::356198252393:user/eksadmin
     - username: eksadmin
     - groups:
