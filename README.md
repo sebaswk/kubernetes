@@ -30,8 +30,8 @@ https://github.com/sebaswk/bash/blob/main/kubectlInstall.sh
 
 ##### It should look something like this: (In this case, the cluster is in AWS EKS)
 - mapUsers: |
-    - userarn: arn:aws:iam::356198252393:user/eksadmin
-    - username: eksadmin
+    - userarn: arn:aws:iam::999999999999:user/useradmin
+    - username: useradmin
     - groups:
         - system:masters
 
