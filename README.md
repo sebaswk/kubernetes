@@ -22,7 +22,7 @@ https://github.com/sebaswk/bash/blob/main/kubectlInstall.sh
 - kubectl get pods --all-namespaces
 
 
-### Probable mistakes
+## Probable mistakes
 *If you have permission problems in your cluster, review the "configmap" that contains the users and roles that can modify it.*
 
 ##### Command:
