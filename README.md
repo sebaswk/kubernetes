@@ -5,7 +5,7 @@ This repository has kubernetes files with simple everyday templates.
 ## File guide
 | Templates name | Description |
 |:------|-------------|
-| namespace.yml | Create a Namespace |
+| [namespaceTemplate](namespace.yml) | Create a Namespace |
 | [albTemplate](alb.yml) | Create an Aplication Load Balancer |
 
 
@@ -13,12 +13,12 @@ This repository has kubernetes files with simple everyday templates.
 Install kubectl in its latest version on linux:
 https://github.com/sebaswk/bash/blob/main/kubectlInstall.sh
 
-##### Configure KUBECTL
+#### Configure KUBECTL
 *This setup requires AWS Cli to be installed.*
-- Command:
+##### Command:
 - aws eks update-kubeconfig --name "cluster name"
 
-- Test:
+##### Test:
 - kubectl get pods --all-namespaces
 
 
@@ -27,13 +27,12 @@ https://github.com/sebaswk/bash/blob/main/kubectlInstall.sh
 Command:
 - kubectl -n kube-system edit configmap aws-auth
 
-###### It should look something like this: (In this case, the cluster is in AWS EKS)
-[ mapUsers: |
+##### It should look something like this: (In this case, the cluster is in AWS EKS)
+-mapUsers: |
     - userarn: arn:aws:iam::999999999999:user/useradmin
-        username: useradmin
-        groups:
+        - username: useradmin
+        - groups:
             - system:masters
-]
 
 
 ## About me

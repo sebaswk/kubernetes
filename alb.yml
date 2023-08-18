@@ -1,50 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: albservice
-    namespace: front
+    name: XXXXX
+    namespace: XXXXX
 spec:
   ipFamilies:
   - IPv4
   ipFamilyPolicy: SingleStack
   ports:
-  - name: http
+  - name: XXXXX
     port: 80
-    targetPort: 9000
+    targetPort: 80
   selector:
-    app: front-positivacoredes
-  type: LoadBalancer
----
-apiVersion: v1
-kind: Service
-metadata:
-    name: albservice
-    namespace: back
-spec:
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
-  ports:
-  - name: http
-    port: 80
-    targetPort: 8080
-  selector:
-    app: back-positivacoredes
-  type: LoadBalancer
----
-apiVersion: v1
-kind: Service
-metadata:
-    name: albservice
-    namespace: jbpm
-spec:
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
-  ports:
-  - name: http
-    port: 80
-    targetPort: 8080
-  selector:
-    app: jbpm-positivacoredes
+    app: XXXXX
   type: LoadBalancer
