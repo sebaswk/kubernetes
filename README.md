@@ -5,8 +5,9 @@ This repository has kubernetes files with simple everyday templates.
 ## File guide
 | Templates name | Description |
 |:------|-------------|
-| [Namespace](namespace.yml) | Create a Namespace |
-| [Alb](alb.yml) | Create an Aplication Load Balancer |
+| [Namespace](Namespace.yml) | Create a Namespace |
+| [Pod](podDeployment.yml) | Create pods in a namespace |
+| [Application Load Balancer](loadbalancerService.yml) | Create an Aplication Load Balancer |
 
 
 ## Install KUBECTL
