@@ -1,13 +1,14 @@
 # KUBERNETES REPOSITORY
-This repository has kubernetes files with simple everyday templates.
+This repository has kubernetes archives with simple manifest templates.
 
 
 ## File guide
-| Templates name | Description |
+| Manifest name | Description |
 |:------|-------------|
 | [Namespace](Namespace.yml) | Create a Namespace |
 | [Pod](podDeployment.yml) | Create pods in a namespace |
 | [Application Load Balancer](loadbalancerService.yml) | Create an Aplication Load Balancer |
+| [Kong Ingress Controller](kongIngressController.yml) | Create Kong ingress controller  |
 
 
 ## Install KUBECTL
