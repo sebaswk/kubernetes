@@ -22,7 +22,7 @@ https://github.com/sebaswk/bash/blob/main/kubectlInstall.sh
 
 ##### Test:
 - kubectl get pods --all-namespaces
-
+- kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh
 
 ## Probable mistakes
 *If you have permission problems in your cluster, review the "configmap" that contains the users and roles that can modify it.*
@@ -36,6 +36,10 @@ https://github.com/sebaswk/bash/blob/main/kubectlInstall.sh
     - username: useradmin
     - groups:
         - system:masters
+
+### Kong - Konga
+- Kong: https://docs.konghq.com/kubernetes-ingress-controller/latest/deployment/eks/
+- Kong - Konga: https://github.com/Kuari/kong-konga-docker-compose
 
 
 ## About me
