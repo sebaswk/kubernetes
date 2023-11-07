@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: $(podName)
+  namespace: $(namespace)
+  labels:
+    app: $(podName)
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: $(podName)
+  template:
+    metadata:
+      labels:
+        app: $(podName)
+    spec:
+      containers:
+      - name: $(podName)
+        image: $(dockerImage)
+        ports:
+        - name: $(podName)
+          containerPort: $(containerPort)
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: $(serviceName)
+  namespace: $(namespace)
+  annotations:
+    konghq.com/protocol: http
+spec:
+  selector:
+    app: $(podName)
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: $(containerPort)
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-$(serviceName)
+  namespace: $(namespace)
+  annotations:
+    konghq.com/strip-path: "true"
+    konghq.com/protocol: http
+spec:
+  ingressClassName: kong
+  rules:
+  - host: "test.example.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: $(serviceName)
+            port:
+              number: 80
