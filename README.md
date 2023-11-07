@@ -9,6 +9,8 @@ This repository has kubernetes archives with simple manifest templates.
 | [Pod](podDeployment.yml) | Create pods in a namespace |
 | [Application Load Balancer](loadbalancerService.yml) | Create an Aplication Load Balancer |
 | [Kong Ingress Controller](kongIngressController.yml) | Create Kong ingress controller  |
+| [Pod Ingress and variables](podIngressVariables.yml) | Create pod with ingress controller and variables |
+| [Pod with variables](podVariables.yml) | Create pod with variables |
 
 
 ## Install KUBECTL
