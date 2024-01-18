@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: XXXXX
-  namespace: XXXXX
+  name: $(podName)
+  namespace: $(namespace)
   labels:
-    app: XXXXX
+    app: $(podName)
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: XXXXX
+      app: $(podName)
   template:
     metadata:
       labels:
-        app: XXXXX
+        app: $(podName)
     spec:
       containers:
-      - name: XXXXX
-        image: XXXXX
+      - name: $(podName)
+        image: $(dockerImage)
         ports:
-        - containerPort: 80
+        - name: $(podName)
+          containerPort: $(containerPort)

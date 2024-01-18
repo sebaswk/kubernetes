@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: $(podName)
+  namespace: $(namespace)
+spec:
+  containers:
+  - name: $(podName)
+    image: $(dockerImage)
+    env:
+    - name: TZ
+      valueFrom:
+        configMapKeyRef:
+          name: $(configmapName)
+          key: TZ
+#This pod will apply the configuration of an already deployed configmap.

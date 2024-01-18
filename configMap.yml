@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: $(configmapName)
+  namespace: $(namespace)
+data:
+  TZ: "America/New_York" #Required time zone
+#This configmap has as an example the configuration of a time zone.
